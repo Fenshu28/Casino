@@ -8,10 +8,12 @@ package caballitos.hilos;
 import caballitos.Caballos;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 public class HiloCompCaballo extends Thread {
 
     private List<String> puestos;
+    private String resultado = "";
 
     public HiloCompCaballo() {
         puestos = new ArrayList<>();
@@ -33,15 +35,19 @@ public class HiloCompCaballo extends Thread {
             }
         }
 
-        System.out.println("Primer lugar " + puestos.get(0));
-        System.out.println("Segundo lugar " + puestos.get(1));
-        System.out.println("Tercer  lugar " + puestos.get(2));
+        int i = 1;
+        for (String puesto : puestos) {
+            resultado += i + ".- " + puesto + "\n";
+            i++;
+        }
 
         if (("Caballo " + Caballos.apostar).equals(puestos.get(0))) {
-            System.out.println("Ganaste!!");
+            resultado += "\nGanaste!!";
         } else {
-            System.out.println("Perdiste!!");
+            resultado += "\nPerdiste!!";
         }
+
+        JOptionPane.showMessageDialog(null, resultado);
     }
 
 }

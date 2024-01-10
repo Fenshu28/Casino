@@ -31,6 +31,7 @@ public class Caballos extends javax.swing.JFrame {
         btnApostar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Juego de caballos");
         setResizable(false);
 
         jLabel1.setText("Caballo 1");
